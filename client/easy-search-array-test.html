@@ -1,0 +1,16 @@
+<head>
+  <title>easy-search-array-test</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor easy-search-array-test!</h1>
+  <div id="search">Click me to start the test</div>
+
+  {{#each results}}
+  	{{> result}}
+  {{/each}}
+</body>
+
+<template name="result">
+	<p>Type of result: {{typeTest}}</p>
+</template>
