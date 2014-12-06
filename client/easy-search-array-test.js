@@ -18,7 +18,20 @@ UI.body.events({
 })
 
 Template.result.helpers({
-  typeTest: function () {      
-    return type(this.arrayField); // this should be Array, but is not
+  arrayTest: function () {     
+    console.log(this.myArray); 
+    return type(this.myArray);
+  },
+  stringTest: function () {      
+    console.log(this.myString); 
+    return type(this.myString);
+  },
+  intTest: function () {      
+    console.log(this.myInt); 
+    return type(this.myInt);
+  },
+  booleanTest: function () {      
+    console.log(this.myBoolean); 
+    return type(this.myBoolean);
   }
 });

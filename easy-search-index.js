@@ -8,8 +8,8 @@ Meteor.startup(function () {
 		'use' 			: 'elastic-search',
 		'query' : function(searchString) {
 			query = { "bool": { "must": [
-            	{ "match": { "title": searchString }},
-        	]}};            	
+				{ "match": { "title": searchString }},
+			]}};            	
 			return query;                                                                                                            
 		}
 	});

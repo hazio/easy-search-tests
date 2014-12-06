@@ -1,6 +1,4 @@
 Meteor.startup(function() {
-    if (CollectionIncludingArray.find().count() === 0)
-    {        
-    	CollectionIncludingArray.insert({title: "my-array-test", arrayField: ["123", "456", "789"]});
-	}
+	CollectionIncludingArray.remove({});
+	CollectionIncludingArray.insert({title: "my-array-test", myArray: ["123", "456", "789"], myString:"123", myInt:1, myBoolean:true });
 });
