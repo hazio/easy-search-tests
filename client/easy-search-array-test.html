@@ -3,17 +3,71 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor easy-search-array-test!</h1>
-  <div id="search">Click me to start the test</div>
+  <h1>Type test</h1>
 
-  {{#each results}}
+  {{#each elasticSearchResults}}
   	{{> result}}
   {{/each}}
 </body>
 
 <template name="result">
-	<p>Array type: {{arrayTest}}</p>
-	<p>String type: {{stringTest}}</p>
-	<p>Int type: {{intTest}}</p>
-	<p>Boolean type: {{booleanTest}}</p>
+	<h2>Primary Data Types</h2>
+ 	<table border=1> 	
+	  	<tr>
+	    	<td>Javascript data type</td>
+	    	<td>stored to MongoDB as</td>
+	    	<td>stored to ElasticSearch as</td>
+	  	</tr>
+	  	<tr>
+	    	<td>String</td>
+	    	<td>{{mongoString}}</td>
+	    	<td class="{{test 'string' myString}}">{{esString}}</td>
+	  	</tr>
+	  	<tr>
+	    	<td>Number</td>
+	    	<td>{{mongoInt}}</td>
+	    	<td class="{{test 'number' myInt}}">{{esInt}}</td>
+	  	</tr>
+	  	<tr>
+	    	<td>Boolean</td>
+	    	<td>{{mongoBoolean}}</td>
+	    	<td class="{{test 'boolean' myBoolean}}">{{esBoolean}}</td>
+	  	</tr>
+	</table> 
+	<h2>Composite Data Types</h2>
+ 	<table border=1>
+	  	<tr>
+	    	<td>Javascript data type</td>
+	    	<td>stored to MongoDB as</td>
+	    	<td>stored to ElasticSearch as</td>
+	  	</tr>
+	  	<tr>
+	    	<td>Object</td>
+	    	<td>{{mongoObject}}</td>
+	    	<td class="{{test 'object' myObject}}">{{esObject}}</td>
+	  	</tr>
+	  	<tr>
+	    	<td>Array</td>
+	    	<td>{{mongoArray}}</td>
+	    	<td class="{{testArray myArray}}">{{esArray}}</td>
+	  	</tr>
+	</table> 
+	<h2>Special Data Types</h2>
+ 	<table border=1>
+	  	<tr>
+	    	<td>Javascript data type</td>
+	    	<td>stored to MongoDB as</td>
+	    	<td>stored to ElasticSearch as</td>
+	  	</tr>
+	  	<tr>
+	    	<td>Null</td>
+	    	<td>{{mongoNull}}</td>
+	    	<td class="{{test 'object' myNull}}">{{esNull}}</td>
+	  	</tr>
+	  	<tr>
+	    	<td>Undefined</td>
+	    	<td>{{mongoUndefined}}</td>
+	    	<td class="{{test 'undefined' myUndefined}}">{{esUndefined}}</td>
+	  	</tr>
+	</table> 
 </template>
