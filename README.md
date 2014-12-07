@@ -1,4 +1,4 @@
-easy-search-array-test
+easy-search-tests
 ======================
 
 Testing https://github.com/matteodem/meteor-easy-search/
