@@ -3,12 +3,51 @@
 </head>
 
 <body>
+  <h1>Sort test</h1>
+  <h2>Sorting in asc order</h2>
+
+  {{#each elasticSearchSortAscResults}}
+ 	<table border=1> 	
+  	{{> ascsortresult}}
+  	</table>
+  {{else}}
+  	<h2>Cannot get results from elasticsearch</h2>
+  {{/each}}
+
+  <h2>Sorting in desc order</h2>
+
+  {{#each elasticSearchSortDescResults}}
+ 	<table border=1> 	
+  	{{> descsortresult}}
+  	</table>
+  {{else}}
+  	<h2>Cannot get results from elasticsearch</h2>
+  {{/each}}
+
   <h1>Type test</h1>
 
   {{#each elasticSearchResults}}
   	{{> result}}
+  {{else}}
+  	<h2>Cannot get results from elasticsearch</h2>
   {{/each}}
 </body>
+
+<template name="ascsortresult">
+  	<tr>
+    	<td>{{order}}</td>
+    	<td>{{title}}</td>
+    	<td class="{{testOrder myInt}}">{{myInt}}</td>
+  	</tr>
+</template>
+
+<template name="descsortresult">
+  	<tr>
+    	<td>{{order}}</td>
+    	<td>{{title}}</td>
+    	<td class="{{testOrder myInt}}">{{myInt}}</td>
+  	</tr>
+</template>
 
 <template name="result">
 	<h2>Primary Data Types</h2>
